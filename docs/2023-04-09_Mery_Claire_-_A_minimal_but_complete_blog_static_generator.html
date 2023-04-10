@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <title>This is the blog title</title>
+  <link rel="stylesheet" href="/app.css">
+</head>
+
+<body>
+  <header class="site-header" role="banner">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/">This is the blog title</a>
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path
+                d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <a class="page-link" href="/archive.html">Archive</a>
+          <a class="page-link" href="/about.html">About</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Mery Claire - A minimal but complete blog static generator</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2023-04-09" itemprop="datePublished">2023-04-09
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1>
+Mery Claire - A minimal but complete blog static generator</h1>
+<p>
+There are lots of site and blog static generators. Most of them are full of tons of features and configuration options that needs pages of documentation and tutorias to get started.  <br />
+Mery Claire is a tiny blog generator, with just the feature you need.</p>
+<h3>
+Getting started</h3>
+<ol>
+  <li>
+Clone this repository and install the dependencies (<code class="inline">mix deps.get</code>)  </li>
+  <li>
+Customize the files in the <code class="inline">_templates</code> folder. These are the containers of your blog, so you can style them adding images and css classes (use the <code class="inline">_assets</code> forlder for external files like css)  </li>
+  <li>
+Add some posts in the <code class="inline">_posts</code> folder. These are your articles written in markdown. In the header section you can define as many attribute as you like and you can use them in the templates (like <code class="inline">title</code>)  </li>
+  <li>
+Test you blog running <code class="inline">mix serve</code> and openin your browser at <code class="inline">https://localhost:4000</code>  </li>
+  <li>
+If everything seems ok your blog is ready in the <code class="inline">docs</code> folder, push on your own hosting or on Github.  </li>
+</ol>
+<p>
+You can change the folders names editing the <code class="inline">config.exs</code> file. I’m using <code class="inline">docs</code> for outoput so it’s easy to host the site on github pages.</p>
+<h2>
+Commands</h2>
+<p>
+<code class="inline">mix gen</code> generates the output in the destination folder  <br />
+<code class="inline">mix serve</code> generates the output and run a webserver to test the pages. When the server is active a watcher rebuilds all the pages when something change</p>
+
+  </div>
+
+</article>
+
+    </div>
+  </main>
+  <footer class="site-footer h-card">
+    <div class="wrapper">
+      <div class="footer-col-wrapper">
+        <div class="footer-col footer-col-3">
+          <p>This blog is powered by Mery Claire - 2023</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

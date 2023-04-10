@@ -1,0 +1,19 @@
+<h1>Archive</h1>
+<div class="home">
+
+
+<ul class="post-list">
+
+  <%= for p <- posts do %>
+  <li><span class="post-meta"><%= p.date %></span>
+    <h3>
+      <a class="post-link" href="<%= p.url %>">
+        <%= p.title %>
+      </a>
+    </h3>
+  </li>
+
+
+<% end %>
+</ul>
+</div>
