@@ -25,7 +25,8 @@ defmodule MeryClaire.MixProject do
       {:phoenix_markdown, "~> 1.0"},
       {:file_system, "~> 0.2"},
       {:earmark, "~> 1.4"},
-      {:plug_cowboy, "~> 2.5"}
+      {:plug_cowboy, "~> 2.5"},
+      {:sass, "~> 3.6"}
     ]
   end
 end

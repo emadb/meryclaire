@@ -6,7 +6,8 @@ defmodule MeryClaire.Generator do
     generate_index()
     generate_about()
     generate_archive()
-    generate_assets()
+    generate_css()
+    copy_assets()
   end
 
   defp generate_posts() do
@@ -41,8 +42,15 @@ defmodule MeryClaire.Generator do
     |> Keyword.put(:file, file)
   end
 
-  defp generate_assets() do
+  defp copy_assets() do
     File.cp_r(Settings.assets(), Settings.destination())
+  end
+
+  defp generate_css() do
+    # %{output_style: Sass.sass_style_compressed}
+    file_name = Path.basename(Settings.scss(), Path.extname(Settings.scss()))
+    {:ok, css} = Sass.compile_file("#{Settings.scss()}")
+    :ok = File.write!("#{Settings.destination()}/#{file_name}.css", css, [:write])
   end
 
   defp generate_about() do

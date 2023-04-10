@@ -28,5 +28,10 @@ defmodule MeryClaire.Settings do
     Keyword.get(folders, :assets)
   end
 
+  def scss() do
+    folders = Application.get_env(:mery_claire, :folders)
+    Keyword.get(folders, :scss)
+  end
+
 
 end

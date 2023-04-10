@@ -16,4 +16,5 @@ config :mery_claire, :folders,
   posts: "./_posts",
   templates: "./_templates",
   destination: "./docs",
+  scss: "./_scss/app.scss",
   assets: "./_assets"
