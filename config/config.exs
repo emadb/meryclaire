@@ -9,8 +9,8 @@ config :phoenix_markdown, :earmark, %{
 }
 
 config :mery_claire, :blog_global,
-  blog_title: "This is the blog title",
-  blog_description: "A short description on how this blog works"
+  blog_title: "MeryClaire",
+  blog_description: "A static blog generator"
 
 config :mery_claire, :folders,
   posts: "./_posts",
