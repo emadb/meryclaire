@@ -5,14 +5,14 @@
 <ul class="post-list">
 
   <%= for p <- posts do %>
-  <li><span class="post-meta"><%= p.date %></span>
+  <li><span class="post-meta"><%= p[:date] %></span>
     <h3>
-      <a class="post-link" href="<%= p.url %>">
-        <%= p.title %>
+      <a class="post-link" href="<%= p[:url] %>">
+        <%= p[:title] %>
       </a>
     </h3>
     <p class="abstract">
-      <%= p.abstract %>
+      <%= p[:abstract] %>
     </p>
   </li>
 
