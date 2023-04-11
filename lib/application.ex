@@ -5,9 +5,10 @@ defmodule MeryClaire.Application do
   @impl true
   def start(_type, _args) do
     dirs = [Settings.assets(), Settings.templates(), Settings.posts()]
+
     children = [
       {Plug.Cowboy, scheme: :http, plug: MeryClaire.StaticServer, options: [port: 4000]},
-      {MeryClaire.FileWatcher, [dirs: dirs]},
+      {MeryClaire.FileWatcher, [dirs: dirs]}
     ]
 
     opts = [strategy: :one_for_one, name: MeryClaire.Supervisor]

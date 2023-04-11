@@ -1,7 +1,6 @@
 import Config
 
-config :phoenix, :template_engines,
-    md: PhoenixMarkdown.Engine
+config :phoenix, :template_engines, md: PhoenixMarkdown.Engine
 
 config :phoenix_markdown, :earmark, %{
   gfm: true,

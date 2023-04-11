@@ -1,5 +1,4 @@
 defmodule MeryClaire.Settings do
-
   def all() do
     {globals(), templates(), posts(), assets(), posts()}
   end
@@ -32,6 +31,4 @@ defmodule MeryClaire.Settings do
     folders = Application.get_env(:mery_claire, :folders)
     Keyword.get(folders, :scss)
   end
-
-
 end

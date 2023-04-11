@@ -12,16 +12,17 @@ defmodule MeryClaire.Generator do
 
   defp generate_posts() do
     Path.wildcard("#{Settings.posts()}/*.md")
-    |> Enum.sort_by(&(&1), :desc)
+    |> Enum.sort_by(& &1, :desc)
     |> Enum.map(&get_header/1)
     |> Enum.map(&generate_post/1)
   end
 
   defp generate_archive() do
-    post_list =Path.wildcard("#{Settings.posts()}/*.md")
-    |> Enum.sort_by(&(&1), :desc)
-    |> Enum.map(&get_header/1)
-    |> Enum.map(&Enum.into(&1, %{}))
+    post_list =
+      Path.wildcard("#{Settings.posts()}/*.md")
+      |> Enum.sort_by(& &1, :desc)
+      |> Enum.map(&get_header/1)
+      |> Enum.map(&Enum.into(&1, %{}))
 
     globals = Settings.globals()
     destination = Settings.destination()
@@ -70,10 +71,11 @@ defmodule MeryClaire.Generator do
   end
 
   defp generate_index() do
-    posts = Path.wildcard("#{Settings.posts()}/*.md")
-    |> Enum.sort_by(&(&1), :desc)
-    |> Enum.take(5)
-    |> Enum.map(&get_header/1)
+    posts =
+      Path.wildcard("#{Settings.posts()}/*.md")
+      |> Enum.sort_by(& &1, :desc)
+      |> Enum.take(5)
+      |> Enum.map(&get_header/1)
 
     globals = Settings.globals()
     destination = Settings.destination()
@@ -114,5 +116,4 @@ defmodule MeryClaire.Generator do
       Keyword.put(acc, String.to_atom(k), String.trim(v))
     end)
   end
-
 end
