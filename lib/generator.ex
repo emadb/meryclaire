@@ -1,7 +1,7 @@
 defmodule MeryClaire.Generator do
   alias MeryClaire.Settings
 
-  def run() do
+  def run(_env) do
     generate_posts()
     generate_index()
     generate_about()
