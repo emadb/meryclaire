@@ -81,13 +81,12 @@ defmodule MdParser do
   end
 
   # sadly there is no is_regex guard...
-  defp only?(regex, path, _) do
-    if Regex.regex?(regex) do
-      String.match?(path, regex)
-    else
-      raise ArgumentError,
+  defp only?(%Regex{} = regex, path, _) do
+    String.match?(path, regex)
+  end
+  defp only?(regex, _path, _) do
+    raise ArgumentError,
             "Invalid parameter to PhoenixMarkdown only: configuration #{inspect(regex)}"
-    end
   end
 
   # --------------------------------------------------------
@@ -107,12 +106,11 @@ defmodule MdParser do
   end
 
   # sadly there is no is_regex guard...
-  defp except?(regex, path, _) do
-    if Regex.regex?(regex) do
-      !String.match?(path, regex)
-    else
+  defp except?(%Regex{} = regex, path, _) do
+    !String.match?(path, regex)
+  end
+  defp except?(regex, _path, _) do
       raise ArgumentError,
             "Invalid parameter to PhoenixMarkdown except: configuration #{inspect(regex)}"
-    end
   end
 end
